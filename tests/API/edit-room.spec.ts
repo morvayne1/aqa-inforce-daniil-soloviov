@@ -36,6 +36,6 @@ test('edit rooms data from admin API and check if it changed', async ({request})
     const updatedRoom = rooms.rooms.find(
         (room: any) => room.roomName === 'Test11'
     )
-
+    
     expect(updatedRoom).toBeTruthy()
 })

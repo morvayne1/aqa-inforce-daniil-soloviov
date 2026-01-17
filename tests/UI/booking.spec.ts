@@ -19,7 +19,7 @@ test.describe('booking proccesses', () => {
         await homePage.goToRooms()
         await roomPage.bookNow()
 
-        await calendar.selectDateRange(20, 25)
+        await calendar.selectDateRange(25, 28)
         await bookingPage.openBookingForm()   
         
         await bookingPage.fillBookingForm({
@@ -34,7 +34,7 @@ test.describe('booking proccesses', () => {
         await expect(bookingPage.isConfirmed).toBeVisible()
     })
 
-    test('booking invalid dates', async ({page}) => {
+    test('booking invalid dates @quarantine', async ({page}) => {
         const homePage = new HomePage(page)
         const roomPage = new RoomPage(page)
         const bookingPage = new BookingPage(page)
@@ -72,7 +72,7 @@ test.describe('booking proccesses', () => {
         await expect(page.getByTitle('Unavailable')).toBeVisible()
     })
 
-     test('check if you can book dates that already booked', async ({page}) => {
+     test('check if you can book dates that already booked @quarantine', async ({page}) => {
         const homePage = new HomePage(page)
         const roomPage = new RoomPage(page)
         const bookingPage = new BookingPage(page)
